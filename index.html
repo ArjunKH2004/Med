@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <title>Medical Shop</title>
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background:url(header.jpg);
+            background-size:cover;
+            padding: 1em;
+            color: white;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom:0;
+        }
+
+        .section, .product, .footer, .gallery {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            padding-top: 50px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .footer{
+            margin: auto;
+        }
+        .opq {
+            opacity: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .button {
+            padding: 5px;
+            border: 2px solid white;
+            color: white;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 0 0 100px rgb(255, 255, 255);
+        }
+
+        .btn {
+            margin-top: 50px;
+        }
+
+        .content {
+            margin-top: 0;
+            background: url(bg.jpg);
+            background-size: cover;
+        }
+        .contact{
+            padding: 5px;
+            background-color: black;
+            border: 2px solid rgb(134, 133, 133);
+            color: white;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .contact:hover
+        {
+            background-color: white;
+            color: black;
+            box-shadow: 0 0 100px black;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeInFromRight 1s ease-out forwards;
+        }
+        h3{
+            font-weight: bolder;
+        }
+        span{
+            color: red;
+        }
+        
+        iframe{
+            box-shadow: 0 0 10px black;
+            border-radius: 10px;
+            width:300;
+            height:300;
+            transition: 0.3s;
+        }
+        iframe:hover{
+            transform:scale(1.1);
+        }
+        @keyframes fadeInFromRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        img{
+            width: 500px;
+            height: 300px;
+            transition: 0.3s;
+            padding-left: 25px;
+        }
+        img:hover{
+            transform:scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Revathy Medicals</h1>
+        <div class="btn">
+            <a class="button" href=>Home</a>
+            <a class="button" href=".section">About</a>
+            <a class="button">Products</a>
+            <a class="button">Contact</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="section op fade-in">
+            <h2>Welcome to <b>Revathy Medicals</b>!</h2>
+            <p>Revathy Medicals is your dedicated partner in health. Committed to your well-being, we provide a curated selection of quality medications, first aid supplies, and health products. Our expert team is here to offer personalized service and guidance, ensuring you make informed choices for your health. Visit us online or in-store for a convenient, one-stop healthcare solution. Your health, our priority.</p>
+        </div>
+
+        <div class="product opq fade-in">
+            <h2>Product Categories</h2>
+            <ul>
+                <li>Over-the-Counter Medications</li>
+                <li>Prescription Medications</li>
+                <li>First Aid Supplies</li>
+                <li>Health and Wellness Products</li>
+            </ul>
+            <h3>Note: Some medicines are only sold under the <span>Doctor's Prescription</span></h3>
+        </div>
+
+        <div class="gallery fade-in">
+            <h1>Gallery</h1>
+            <img src="img1.jpeg">
+            
+        </div>
+
+        <div class="footer fade-in">
+            <h1>Find Us</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.6405243797492!2d76.95002799882842!3d8.475210903153028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bba787e865c5%3A0xa1f622275d04f470!2sRevathy%20Medicals!5e0!3m2!1sen!2sin!4v1701488464130!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>
+                Proprietor: N Kumaresan<br><br>
+                <a class ="contact" href="http://wa.me/919495074353">Contact</a></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to add the fade-in class when the user scrolls to the contact section
+        window.addEventListener('scroll', function () {
+            var contactSection = document.querySelector('.footer');
+            var position = contactSection.getBoundingClientRect();
+
+            // If the contact section is in the viewport, add the fade-in class
+            if (position.top < window.innerHeight && position.bottom >= 0) {
+                contactSection.classList.add('fade-in');
+            }
+        });
+    </script>
+
+</body>
+</html>
